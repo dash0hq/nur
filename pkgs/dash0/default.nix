@@ -9,24 +9,24 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0ysjypfnc3mxqky0ci9l5gc6gi047xackn4s6vd3i083hnv0y856";
-    armv6l-linux = "0f78anp5c02y8jhh5yf5awinq1b98c80x4gh0z79b32z36r35rkj";
-    aarch64-linux = "0xghy4j3v9j23gbzg6az81yysx2rppk6qc9iix39ssdaj92q9aa0";
-    x86_64-darwin = "0g2n1b88jr4hdbb05my0gkj4pnr8mcz6y6sz75iaschy7j22q8ja";
-    aarch64-darwin = "1j108axmirrpagkx9y05fnl561m3rq57ra8s4fz3vmlhh9rpr82x";
+    x86_64-linux = "0ck7spjr1ykwi6095bgk70pffwlxbzdmqq9rafy7wcclxd47nxia";
+    armv6l-linux = "1qzb1im2wzcbf3inkp0mivdfnhhl7kzrsm1nizpd29vs4iw3n2lr";
+    aarch64-linux = "0q8zhxyibg8bcscfma99hh5jwa97z8rxpvs843y27chmcvaz47xf";
+    x86_64-darwin = "1psawzc9qxvx1n3gidjmc64hqx00fhpjzi4n12yryy3qyrn58i48";
+    aarch64-darwin = "01ls9bjznlc3s97iq8xk1zd7wzz741w66cd7p7w4yg36pgibzgrq";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/dash0hq/dash0-cli/releases/download/v1.19.0/dash0_1.19.0_linux_amd64.tar.gz";
-    armv6l-linux = "https://github.com/dash0hq/dash0-cli/releases/download/v1.19.0/dash0_1.19.0_linux_arm.tar.gz";
-    aarch64-linux = "https://github.com/dash0hq/dash0-cli/releases/download/v1.19.0/dash0_1.19.0_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/dash0hq/dash0-cli/releases/download/v1.19.0/dash0_1.19.0_macos_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/dash0hq/dash0-cli/releases/download/v1.19.0/dash0_1.19.0_macos_arm64.tar.gz";
+    x86_64-linux = "https://github.com/dash0hq/dash0-cli/releases/download/v1.20.0/dash0_1.20.0_linux_amd64.tar.gz";
+    armv6l-linux = "https://github.com/dash0hq/dash0-cli/releases/download/v1.20.0/dash0_1.20.0_linux_arm.tar.gz";
+    aarch64-linux = "https://github.com/dash0hq/dash0-cli/releases/download/v1.20.0/dash0_1.20.0_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/dash0hq/dash0-cli/releases/download/v1.20.0/dash0_1.20.0_macos_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/dash0hq/dash0-cli/releases/download/v1.20.0/dash0_1.20.0_macos_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "dash0";
-  version = "1.19.0";
+  version = "1.20.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
